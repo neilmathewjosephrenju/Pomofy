@@ -11,21 +11,38 @@ docu.addEventListener('submit',function(event){
 
 });
 
+
+
+
+
+
+
+
+
+// This function helpos in clearing the visual part of the display and then iterating the Master list to display the updated the tasks 
 function renderTasks(){
     let TASK = document.getElementById("tasklist");
     TASK.innerHTML='';
     for (let Taskobject of store){
         let t = document.createElement("li");
+        t.dataset.id = Taskobject.id;
         t.textContent = Taskobject.ToDo;
+
+        //
+        if (Taskobject.completed){
+            t.classList.add('completed');
+
+        };
+
+        //Checking if the user clicks on the task to strike it out
+        t.addEventListener('click',function(event){
+            strikeTask(Taskobject.id)
+        });
+
         TASK.appendChild(t);
     }
 
 };
-
-
-
-
-
 
 
 
@@ -38,7 +55,6 @@ function addTask(){
         alert("The Task is Empty! Add some Task.");
         return;
     }
-
 
     // This one add a new task using the ID and makes the completed Task as false
     const Tasklist = {
@@ -55,5 +71,19 @@ function addTask(){
 
     // And now we need to clear the input from the box 
     document.getElementById("giveTask").value = '';
-
 }
+
+
+
+// This function is for striking out the element in the board
+ function strikeTask(id){
+
+    for (let Taskobject of store){
+
+        if (id === Taskobject.id){
+            Taskobject.completed=!Taskobject.completed;
+        };
+    };
+    renderTasks();
+
+ };

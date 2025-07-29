@@ -107,9 +107,7 @@ body{
 }
 
 .focus:hover{
-    
-    background-color: rgba(220, 220, 220);
-    
+    background-color: rgba(220, 220, 220);    
 }
 
 
@@ -189,13 +187,13 @@ body{
 
 .TodoContainer{
     display: flex;
+    flex-direction: column;
     width: 90%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.1);
     margin-top: 20px;
-    justify-content: center;
+    align-items: center;   
     margin-left: 42px;
-
 }
 
 #Form{
@@ -215,10 +213,21 @@ body{
 }
 .form-row input[type="submit"] {
   width: 10%; /* button takes only needed width */
+  border-color: rgb(255, 255, 255,0.1);
+  border-radius: 25px;
+  background-color:  rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .form-row input[type="text"]{
     width: 100%;
     background-color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255,0.1);
+}
+
+
+.completed {
+    text-decoration: line-through;
+    color: #000000;
+    cursor: pointer;
 }
