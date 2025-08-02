@@ -11,6 +11,14 @@ docu.addEventListener('submit',function(event){
 
 });
 
+//This is for adding the listener to the reset button 
+let but = document.getElementById("reset")
+
+but.addEventListener('click',function(event){
+    
+    event.preventDefault();
+    resetTask();
+});
 
 
 
@@ -86,4 +94,12 @@ function addTask(){
     };
     renderTasks();
 
+ };
+
+
+ //This function is for resetting the entire Tasks 
+
+ function resetTask(){
+    store.length = 0;
+    renderTasks();
  };

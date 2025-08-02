@@ -194,6 +194,7 @@ body{
     margin-top: 20px;
     align-items: center;   
     margin-left: 42px;
+    gap: 10px;
 }
 
 #Form{
@@ -230,4 +231,33 @@ body{
     text-decoration: line-through;
     color: #000000;
     cursor: pointer;
+}
+
+#reset{
+    border-radius: 20px;
+    border-color: rgb(255, 255, 255,0.1);
+    background-color:  rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 254, 254);
+  border-radius: 25px;
+   
+}
+
+#tasklist {
+    width: 100%; 
+    max-width: 600px; 
+    text-align: left;
+    padding-left: 0;
+    margin: 0;
+}
+
+#tasklist li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  text-align: left;
 }
