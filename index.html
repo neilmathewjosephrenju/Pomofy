@@ -1,90 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Pomofy</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Pomofy</title>
 </head>
 
 <body>
-    <div class = "logo">
-        <p class = "desrb">POMOFY</p>
-    </div>
+  <div class="logo">
+    <p class="desrb">POMOFY</p>
+  </div>
 
-    <div class = container>
+  <div class="container">
+    <div class="block1">
+      <div class="taskHeading">
+        <p class="heading">Tasks</p>
+      </div>
 
-        <div class="block1">
-            <div class="taskHeading">
-                <p class="heading">Tasks</p>
-            </div>
+      <div class="TodoContainer">
+        <form id="Form">
+          <label for="giveTask"></label>
+          <div class="form-row">
+            <input type="text" id="giveTask" name="giveTask"/>
+            <input type="submit" value="Add Task"/>
+          </div>
+        </form>
 
-            <div class="TodoContainer">
-                <form id="Form">
-                    <label for="giveTask"></label>
-
-                    <div class="form-row">
-                        <input type="text", id = "giveTask" name ="giveTask">
-                        <input type="submit" value="Add Task">
-                    </div>
-
-                </form>
-
-                <div class="clearout">
-                        <button id="reset">Reset</button>
-                </div>
-
-                <div class ="listContainer">
-                    <ul id ="tasklist">
-                    </ul>
-                </div>
-
-
-            
-            </div>
- 
+        <div class="clearout">
+          <button id="reset">Reset</button>
         </div>
 
-        <div class="block2">
-            <div class="mainApp">
-                <div class="optionsBlock">
-                    <button class="focus">Pomodoro</button>
-                    <button class="shortBreak">Short Break</button>
-                    <button class="longBreak">Long Break</button>
-                </div>
-                <div class="timeBlock">
-
-                    
-                </div>
-                <div class="buttonBar">
-                    <div class="start">
-                        <button class ="butt">Start</button>
-                    </div>
-                    <div class="restart">
-                        <button class="butt">Restart</button>
-                        
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="quoteBlock">
-
-            </div>
-
-            <div class="spotifyBlock">
-                
-            </div>
-
-            
+        <div class="listContainer">
+          <ul id="tasklist"></ul>
         </div>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="block2">
+      <!-- Timer block -->
+      <div class="mainApp">
+        <div class="optionsBlock">
+          <button class="focus">Pomodoro</button>
+          <button class="shortBreak">Short Break</button>
+          <button class="longBreak">Long Break</button>
+        </div>
+        <div class="timeBlock"></div>
+        <div class="buttonBar">
+          <div class="start">
+            <button class="butt">Start</button>
+          </div>
+          <div class="restart">
+            <button class="butt">Restart</button>
+          </div>
+        </div>
+      </div>
 
+      <!-- Quote block OUTSIDE of .mainApp -->
+        <div id="quoteBlock">
+        <p id="quote">Quote placeholder!</p>
+      </div>
 
+      <!-- Spotify block -->
+      <div class="spotifyBlock">
+        <p id ="song"></p>
+      </div>
+    </div>
+  </div>
 
+  <script src="script.js"></script>
 </body>
 </html>
