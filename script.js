@@ -103,3 +103,23 @@ function addTask(){
     store.length = 0;
     renderTasks();
  };
+
+
+const apiQuoteURL = "https://api.quotable.io/random";
+
+async function getapi(apiQuoteURL){
+    try {
+        let response = await fetch(apiQuoteURL);
+        let data = await response.json();
+        let quote = document.getElementById("quote");
+        quote.innerHTML = `"${data.content}" - ${data.author}`;
+    }
+    catch(error) {
+        console.error("Error while fetching quote:", error);
+        document.getElementById("quote").innerHTML = "Failed to load the Quote.";
+    }
+}
+
+getapi(apiQuoteURL);
+
+
