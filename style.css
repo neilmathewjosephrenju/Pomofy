@@ -1,3 +1,7 @@
+
+
+
+
 body{
     font-family: Segoe UI, 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
     background-image: url(images/pexels-eberhardgross-691668.jpg);
@@ -33,8 +37,9 @@ body{
 
 .block2{
     display:flex;
+    flex-direction: column;
     justify-content: flex-start;
-    height: 50%;
+    height: 900px;
     width: 90%;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 25px;
@@ -42,6 +47,8 @@ body{
     
 
 }
+
+
 .block1{
     display: flex;
     flex-direction: column;
@@ -72,14 +79,11 @@ body{
 .mainApp{
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 90%;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     
-    
-    
-
     
 }
 
@@ -234,7 +238,7 @@ body{
 }
 
 #reset{
-    border-radius: 20px;
+    border-radius: 10px;
     border-color: rgb(255, 255, 255,0.1);
     background-color:  rgb(255, 255, 255);
     cursor: pointer;
@@ -261,3 +265,19 @@ body{
   border-bottom: 1px solid #ccc;
   text-align: left;
 }
+
+#quoteBlock {
+  width: 90%;
+  margin: 1rem auto;
+  padding: 1rem;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+}
+
+#quoteText {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #333;
+}
+
