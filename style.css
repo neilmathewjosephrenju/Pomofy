@@ -102,7 +102,7 @@ body{
 
 
 
-.focus{
+#focus{
     background-color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
@@ -110,14 +110,14 @@ body{
     transition: 0.3s;
 }
 
-.focus:hover{
+#focus:hover{
     background-color: rgba(220, 220, 220);    
 }
 
 
 
 
-.shortBreak{
+#shortBreak{
     background-color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
@@ -127,14 +127,14 @@ body{
 
 }
 
-.shortBreak:hover{
+#shortBreak:hover{
     
     background-color: rgba(220, 220, 220);
     
 }
 
 
-.longBreak{
+#longBreak{
     background-color: rgb(255, 255, 255);
     border: none;
     cursor: pointer;
@@ -144,7 +144,7 @@ body{
 
 }
 
-.longBreak:hover{
+#longBreak:hover{
     
     background-color: rgba(220, 220, 220);
     
@@ -164,7 +164,7 @@ body{
 
 }
 
-.butt{
+#buttStart{
     background-color: rgb(255, 255, 255);
     height: 80%;
     border: none;
@@ -173,7 +173,21 @@ body{
     transition: 0.3s;
 
 }
-.butt:hover{
+#buttStart:hover{
+    
+    background-color: rgba(220, 220, 220);
+    
+}
+#buttResume{
+    background-color: rgb(255, 255, 255);
+    height: 80%;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: 0.3s;
+}
+
+#buttResume:hover{
     
     background-color: rgba(220, 220, 220);
     
