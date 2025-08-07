@@ -123,3 +123,94 @@ async function getapi(apiQuoteURL){
 getapi(apiQuoteURL);
 
 
+
+
+// This block is for making the timer app 
+
+let duration = 25*60;
+let timer;
+let isRunning = false;
+
+// Pomodoro (25 mins)
+function setPomodoro() {
+    duration = 25 * 60;
+    clearInterval(timer);
+    isRunning = false;
+    updateDisplay();
+}
+
+// Short Break (5 mins)
+function ShortBreak() {
+    duration = 5 * 60;
+    clearInterval(timer);
+    isRunning = false;
+    updateDisplay();
+}
+
+// Long Break (15 mins)
+function LongBreak() {
+    duration = 15 * 60;
+    clearInterval(timer);
+    isRunning = false;
+    updateDisplay();
+}
+
+// Start Button
+function startButton() {
+    if (!isRunning && duration > 0) {
+        isRunning = true;
+        timer = setInterval(() => {
+            if (duration > 0) {
+                duration = duration - 1;
+                updateDisplay();
+            } else {
+                clearInterval(timer);
+                isRunning = false;
+            }
+        }, 1000);
+    }
+}
+
+// Resume Button
+function pauseResumeButton() {
+    const button = document.getElementById("buttResume");
+
+    if (isRunning) {
+        // Pause
+        clearInterval(timer);
+        isRunning = false;
+        button.textContent = "Resume";
+    } else {
+        // Resume
+        if (duration > 0) {
+            isRunning = true;
+            timer = setInterval(() => {
+                if (duration > 0) {
+                    duration--;
+                    updateDisplay();
+                } else {
+                    clearInterval(timer);
+                    isRunning = false;
+                    button.textContent = "Pause";
+                }
+            }, 1000);
+            button.textContent = "Pause";
+        }
+    }
+}
+
+// Timer display
+function updateDisplay() {
+    let minutes = Math.floor(duration / 60);
+    let seconds = duration % 60;
+    let formattedMinutes = minutes.toString().padStart(2, '0');
+    let formattedSeconds = seconds.toString().padStart(2, '0');
+    document.getElementById("timer").textContent = `${formattedMinutes}:${formattedSeconds}`;
+}
+
+
+document.getElementById("focus").addEventListener("click", setPomodoro);
+document.getElementById("shortBreak").addEventListener("click", ShortBreak);
+document.getElementById("longBreak").addEventListener("click", LongBreak);
+document.getElementById("buttStart").addEventListener("click", startButton);
+document.getElementById("buttResume").addEventListener("click", pauseResumeButton);
