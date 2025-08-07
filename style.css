@@ -281,3 +281,20 @@ body{
   color: #333;
 }
 
+.spotifyBlock{
+    display: flex;
+    width: 95%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+
+}
+
+.spotifyBlock iframe {
+  border-radius: 20px;
+  box-shadow: 0px 0px 12px rgb(255, 255, 255);
+  transition: transform 0.3s ease-in-out;
+}
+
+.spotifyBlock iframe:hover {
+  transform: scale(1.02);
+}
